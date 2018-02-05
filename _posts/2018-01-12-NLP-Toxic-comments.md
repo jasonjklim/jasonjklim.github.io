@@ -15,7 +15,7 @@ The dataset is from Wikipedia's talk page edits' comments. I challenge to build 
 
 ### About Data
 
-<img src="/images/toxic_comments/data_size.png" alt="Data Size" width="840" height="600">
+<img src="/images/toxic_comments/data_size.png" alt="Data Size" width="840" height="100">
 
 
 I open train and test data and check the size of data. Train dataset has 95,851 lines and test dataset has 226,998 lines of data, which is 30:70 train and test split. 
