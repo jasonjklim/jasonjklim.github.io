@@ -22,7 +22,7 @@ I open train and test data and check the size of data. Train dataset has 95,851 
 
 
 
-<img src="/images/toxic_comments/train_tail.png" alt="Train Tail part" width="840" height="600">
+<img src="/images/toxic_comments/train_tail.png" alt="Train Tail part" width="840" height="100">
 
 
 When I look inside of train set, there are 8 columns, id, comment_text, toxic, severe_toxic, obscene, threat, insult, and identity_hate. Therefore, I analyze comment_text columns to check characteristics of each target. 
