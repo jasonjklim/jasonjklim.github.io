@@ -17,18 +17,18 @@ background: '/img/posts/06.jpg'
 <p>Type is the basic information of the school such as state, size, highest degree, etc.. Major is an academic major that the student commits such as computer, health, etc.</p>
 
 
-<img class="img-fluid" src="/image/me_api/api.png" alt="API Screen Shot" width="800" height="300">
+<img src="/image/me_api/api.png" alt="API Screen Shot" width="800" height="300">
 
 <h2 class="section-heading">EDA</h2>
 
-<img class="img-fluid" src="/image/me_api/me_dist.png" alt="Median earning distribution" width="800" height="600">
+<img src="/image/me_api/me_dist.png" alt="Median earning distribution" width="800" height="600">
 <p>First, I make a plot to see the distribution of median earning of all school after 6 years of graduation.There are some outliers on median earning,  most of the median earning belong between $ 15,000 and $ 70,000. </p>
 
-<img class="img-fluid" src="/image/me_api/me_type.png" alt="Median earning by degree types" width="800" height="600">
+<img src="/image/me_api/me_type.png" alt="Median earning by degree types" width="800" height="600">
 <p>Then, which degree is worth? In this data, there are four types of degrees; certificate, associate, bachelor, and graduate. Even though there are many outliers, graduate degree school has more median earning than other degrees. Surprisingly, median earning differences between certificate, associate, and bachelors are less than $ 20,000. </p>
 
 <p>I use another feature from data, Carnegie Classification of Size and Setting. This feature categorizes each degree into 20 different classes. (More information, its webpage shows details, <a href="http://carnegieclassifications.iu.edu/classification_descriptions/size_setting.php">Carnegieclassifications</a>.) </p>
-<img class="img-fluid" src="/image/me_api/me_size.png" alt="Size&Setting vs Median Earning" width="800" height="600">
+<img src="/image/me_api/me_size.png" alt="Size&Setting vs Median Earning" width="800" height="600">
 
 <p>Carnegie Class 17 and 18 are Four-year, large, highly residential and Exclusively graduate/professional. These two shows better median earning than other classes. Moreover, there are not much of differences in median earning on other classes.</p>
 
@@ -36,8 +36,8 @@ background: '/img/posts/06.jpg'
 
 <h2 class="section-heading">Feature Importance and Next Step</h2>
 
-<img class="img-fluid" src="/image/me_api/GB_model.png" alt="GB Model" width="800" height="600">
-<img class="img-fluid" src="/image/me_api/fi.png" alt="Feature Importance" width="800" height="600">
+<img src="/image/me_api/GB_model.png" alt="GB Model" width="800" height="600">
+<img src="/image/me_api/fi.png" alt="Feature Importance" width="800" height="600">
 
 <p>I create a model to understand the relationship between variables. I use Gradient Boosting Regressor to build my model because  Gradient Boosting model gives me lowest RMSE, the residual average of $4887.38. From Feature importance, I realize that health major is the most important feature to predict median earning. Moreover, carnegie_undergrad 0.0 and highest degree are similar meanings, which is the graduate degree. </p>
 
