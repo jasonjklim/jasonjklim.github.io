@@ -8,3 +8,27 @@ background: '/img/posts/yelp_logo.png'
 <p>Yelp was founded in 2004 and has become one of the must-have applications. People use Yelp to find local businesses like restaurants, hair stylists, even hospitals. Yelp does not stop at providing business information, it lets people write their experiences from businesses. People rate their experiences by stars and share their opinions with other people. By these stars and reviews, many people decide to visit their trips to these businesses and local business owners look these reviews carefully.</p> 
 <p>In this project, I want to build a model to predict stars of reviews whether the user gives 1, which is the lowest, or 5, which is the highest, based on their reviews. It may help to predict business ratings to improve small businesses.</p>
 <p>I will use <a href="https://www.kaggle.com/c/yelp-recsys-2013#description" >Yelp Business Rating Prediction from Kaggle</a>. This data is over 10,000 businesses, 8,000 check-in sites, 40,000 users, and 200,000 reviews from the Phoenix, AZ metropolitan area.</p>
+
+<h2 class="section-heading">EDA</h2>
+
+
+<img class="img-fluid" src="/image/yelp_review/stars_facetgrid.png" alt="Stars with text length" width="800" height="300">
+<p>I create text length columns. It helps me to check how many words are using in each review. Moreover, I can check how many words are using on each star.</p>
+
+<img class="img-fluid" src="/image/yelp_review/text_length_vs_star.png" alt="Stars with text length2" width="800" height="300">
+<p> It looks like more texts are used in 1 or 2 stars on average, but there are many outliers. Therefore, text length cannot be the key factor to determine different stars.</p>
+
+<img class="img-fluid" src="/image/yelp_review/countplot.png" alt="Stars with text length3" width="800" height="300">
+
+<p>I check counts of each star. There are 749 reviews that rates 1 star, and 3337 reviews that rates 5 stars. I will use only these two classes (1 or 5 stars) to create a model because these two classes clearly distinguish good and bad experiences. Thus, my data's size is 4086. </p>
+
+
+
+<h2 class="section-heading">Modeling</h2>
+
+<p>In this model, I use Count Vectorizer to convert a collection of text documents to a matrix of token counts. In simple term, Count Vectorizer creates Bag of words to check occurrence of each word and uses as a feature for training classifiers. If you want to know more about preparing text data, Jason Brownlee's page of <a href="https://machinelearningmastery.com/prepare-text-data-machine-learning-scikit-learn/">prepare text data for machine learning page</a> is helpful. </p>
+<img class="img-fluid" src="/image/yelp_review/pipeline.png" alt="Pipeline" width="800" height="300">
+<p>I create my own text process to remove stop words and clean the text. A stop word is a commonly used word that can be ignored such as 'is', 'a', 'the'. Then, I build a pipeline to combine with Naive Bayes classifier for multinomial models. You can check Wikipedia, <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">Naive Bayes Classifier</a>, for a better understanding of the model.</p>
+<img class="img-fluid" src="/image/yelp_review/metrics.png" alt="Metrics" width="800" height="300">
+
+<p>To evaluate my model, I use confusion matrix and classification report. This model performs well in every category to predict good and bad reviews and corresponding star. Yet, there are many things need to do to improve this model. This is 2012 data, so there can be many changes in recent Yelp review such as new trending words or slangs that are not used in 2012. In addition, some people may use sarcasm in their review. This may reduce prediction power of NLP model.</p>
